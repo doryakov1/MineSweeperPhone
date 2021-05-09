@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/index.css">
+    <title>MineSweeper</title>
+</head>
+
+<body onload="init()">
+    <header>
+        <h3> <span class="time">Time: 0</span>
+            <span class="marked"></span>
+            <span class="showen-counts"></span>
+        </h3>
+        <span class="lifes-counts"></span>
+
+        <h2>
+            <button class="flags" onclick="setFlag()"></button>
+            <button class="levels" onclick="levels('beginner')">Beginner</button>
+            <button class="levels" onclick="levels('medium')">Medium</button>
+            <button class="levels" onclick="levels('expert')">Expert</button>
+        </h2>
+
+        <span class="face-show" onclick="init()"></span>
+
+
+    </header>
+    <div class="board-container" oncontextmenu="return false;"></div>
+
+    <script src="js/util.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/admob_simple.js"></script>
+
+    <!-- <script>
+        let banner
+
+        document.addEventListener('deviceready', async() => {
+            await admob.start()
+
+            banner = new admob.BannerAd({
+                adUnitId: 'ca-app-pub-5265521236094270/9363949937',
+            })
+
+            await banner.show()
+        }, false)
+
+        document.addEventListener('admob.banner.impression', async() => {
+            await banner.hide()
+        })
+
+        let interstitial
+
+        document.addEventListener('deviceready', async() => {
+            await admob.start()
+
+            interstitial = new admob.InterstitialAd({
+                adUnitId: 'ca-app-pub-5265521236094270/9451935064',
+            })
+
+            await interstitial.load()
+            await interstitial.show()
+        }, false)
+
+        document.addEventListener('admob.interstitial.dismiss', async() => {
+            // Once a interstitial ad is shown, it cannot be shown again.
+            // Starts loading the next interstitial ad as soon as it is dismissed.
+            await interstitial.load()
+        })
+    </script> -->
+</body>
+
+</html>
